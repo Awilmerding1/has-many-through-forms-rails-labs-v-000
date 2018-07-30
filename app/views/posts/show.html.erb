@@ -25,7 +25,7 @@
 <%=f.label "Existing User"%>
 <%=f.collection_select :user_id, User.all, :id, :username, include_blank: 'Choose Existing User' %>
 <%=f.label "New User:"%><br>
-<%= f.fields_for :users, @post.users.build do |users_fields| %>
+<%= f.fields_for :users, @post.comments.last.build do |users_fields| %>
 <%=f.label "Username:"%><br>
 <%= users_fields.text_field :username %><br>
 <%=f.label "Email:"%><br>
