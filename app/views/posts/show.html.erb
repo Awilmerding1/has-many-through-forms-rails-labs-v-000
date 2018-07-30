@@ -23,7 +23,7 @@
 <h3>New Comment:</h3>
 <%=form_for @post.comments.build do |f|%>
 <%=f.label "Existing User"%>
-<%=f.collection_select :user_id, User.all, :id, :username, include_blank: true %>
+<%=f.collection_select :user_id, User.all, :id, :username, include_blank: 'Choose Existing User' %>
 <%=f.label "New User:"%><br>
 <%= f.fields_for :users, @post.users.build do |users_fields| %>
 <%=f.label "Username:"%><br>
